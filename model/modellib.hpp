@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -7,5 +8,11 @@
 #include <stdexcept>
 #include <filesystem>
 
-const std::string MAIN_FORMAT = ".ptc";
-const std::string INPUT_FORMAT = ".txt";
+namespace PTC
+{
+    const std::string INPUT_FORMAT = ".txt";
+
+    class ExtractorModel;
+    class CompressorModel;
+};
+

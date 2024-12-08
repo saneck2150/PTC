@@ -1,7 +1,7 @@
-#include "model/extractor.cpp"
+#include "model/compressor.cpp"
 
 int main ()
 {
-    ExtractorModel model ("test.txt");
+    PTC::ExtractorModel model ("test.txt");
     model.loadData();
 }
