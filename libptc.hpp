@@ -7,5 +7,5 @@
 #include <stdexcept>
 #include <filesystem>
 
-const std::string MAIN_FORMAT = "ptc";
-const std::string INPUT_FORMAT = "txt";
+const std::string MAIN_FORMAT = ".ptc";
+const std::string INPUT_FORMAT = ".txt";

@@ -1,5 +1,7 @@
-#include "model.cpp"
+#include "model/extractor.cpp"
 
-int main (int argc, char* argv)
+int main ()
 {
+    ExtractorModel model ("test.txt");
+    model.loadData();
 }

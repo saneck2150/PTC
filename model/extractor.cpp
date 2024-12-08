@@ -7,7 +7,6 @@ class ExtractorModel {
 private:
     const std::string fileName;
     std::vector<std::string> inputDataTokens;
-
     bool isValidFileExtension(const std::string& extension) const;
 
 public:
@@ -24,7 +23,7 @@ void ExtractorModel::loadData() {
         throw std::runtime_error("File does not exist: " + fileName);
     }
 
-    if (!isValidFileExtension(".txt")) { // Заменить на нужное расширение
+    if (!isValidFileExtension(INPUT_FORMAT)) { 
         throw std::runtime_error("File format is incorrect: " + fileName);
     }
 
