@@ -7,10 +7,11 @@ class PTC::ExtractorModel
 {
 private:
     const std::string fileName;
-    std::vector<std::string> inputDataTokens;
+
     bool isValidFileExtension(const std::string& extension) const;
 
 public:
+    std::vector<std::string> inputDataTokens;
     explicit ExtractorModel(const std::string& file) : fileName(file) {}
     void loadData();
 };
@@ -37,7 +38,7 @@ void PTC::ExtractorModel::loadData()
     {
         throw std::runtime_error("Cannot open file: " + fileName);
     }
-    
+
     if (l_stream.peek() == std::ifstream::traits_type::eof()) 
     {
         throw std::runtime_error("File is empty: " + fileName);

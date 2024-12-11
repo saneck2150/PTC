@@ -1,5 +1,5 @@
-#ifndef _LIB_
-#define _LIB_
+#ifndef _LIB_HPP_
+#define _LIB_HPP_
 
 #include <iostream>
 #include <string>
