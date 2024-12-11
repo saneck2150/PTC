@@ -9,13 +9,16 @@
 #include <stdexcept>
 #include <filesystem>
 #include <thread>
+#include <mutex>
+#include <algorithm>
 
 namespace PTC
 {
     const std::string INPUT_FORMAT = ".txt";
 
     class ExtractorModel;
-    class CompressorModel;
+    class RLECompressorModel;
+    class HuffmanCompressorModel;
 };
 
 #endif
