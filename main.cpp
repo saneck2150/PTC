@@ -15,28 +15,28 @@ int main()
         try
         {
             std::cout << "File status -> ";
-            extrModel.loadData(); // Загрузка данных из файла
+            extrModel.loadData(); 
             std::cout << "OK" << std::endl;
             for (const auto& token : extrModel.getInputDataTokens())
             {
-                std::cout << token << std::endl; // Вывод токенов после сжатия
+                std::cout << token << std::endl;
             }
         }
         catch (std::runtime_error& e)
         {
-            std::cerr << "Error: " << e.what() << std::endl; // Исправлен вывод ошибок
+            std::cerr << "Error: " << e.what() << std::endl; 
             return 0;
         }
 
         std::cout << "Program is alive" << std::endl;
 
         PTC::RLECompressorModel comprModel;
-        comprModel.rleCompressor(extrModel); // Компрессия данных
+        comprModel.rleCompressor(extrModel); 
 
         std::cout << "Compressed Data:" << std::endl;
         for (const auto& token : comprModel.getRLETokens())
         {
-            std::cout << token << std::endl; // Вывод токенов после сжатия
+            std::cout << token << std::endl; 
         }
     }
     return 0;

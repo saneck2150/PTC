@@ -27,7 +27,7 @@ void PTC::RLECompressorModel::rleCompressor(PTC::ExtractorModel& tokenisedText)
 void PTC::RLECompressorModel::compressVectorParallel(const std::vector<std::string>& input, int numThreads)
 {
     int n = input.size();
-    rleCompressedTokens.resize(n); // Инициализация размера вектора
+    rleCompressedTokens.resize(n); 
     std::vector<std::thread> threads;
 
     int blockSize = (n + numThreads - 1) / numThreads;
