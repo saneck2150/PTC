@@ -8,6 +8,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <filesystem>
+#include <thread>
 
 namespace PTC
 {

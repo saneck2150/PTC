@@ -7,13 +7,12 @@ class PTC::ExtractorModel
 {
 private:
     const std::string fileName;
-
-    bool isValidFileExtension(const std::string& extension) const;
-
-public:
     std::vector<std::string> inputDataTokens;
+    bool isValidFileExtension(const std::string& extension) const;
+public:
     explicit ExtractorModel(const std::string& file) : fileName(file) {}
     void loadData();
+    std::vector<std::string>& getInputDataTokens();  
 };
 
 void PTC::ExtractorModel::loadData() 
@@ -59,5 +58,11 @@ bool PTC::ExtractorModel::isValidFileExtension(const std::string& extension) con
     }
     return fileName.substr(dotPos) == extension;
 }
+
+ std::vector<std::string>& PTC::ExtractorModel::getInputDataTokens()  
+{
+    return inputDataTokens;
+}
+
 
 #endif
