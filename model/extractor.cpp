@@ -37,6 +37,11 @@ void PTC::ExtractorModel::loadData()
     {
         throw std::runtime_error("Cannot open file: " + fileName);
     }
+    
+    if (l_stream.peek() == std::ifstream::traits_type::eof()) 
+    {
+        throw std::runtime_error("File is empty: " + fileName);
+    }
 
     for (std::string token; l_stream >> token; ) 
     {

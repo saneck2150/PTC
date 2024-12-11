@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _LIB_
+#define _LIB_
 
 #include <iostream>
 #include <string>
@@ -16,3 +17,4 @@ namespace PTC
     class CompressorModel;
 };
 
+#endif
