@@ -11,7 +11,7 @@ int main()
     if (NO_GUI)
     {
         std::cout << "Uploading File" << std::endl;
-        PTC::ExtractorModel extrModel("test.txt");
+        PTC::ExtractorModel extrModel("test.pdf");
         try
         {
             std::cout << "File status -> ";

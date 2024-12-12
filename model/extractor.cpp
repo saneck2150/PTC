@@ -30,7 +30,7 @@ void PTC::ExtractorModel::loadData()
 
     if (!isValidFileExtension(INPUT_FORMAT)) 
     { 
-        throw std::runtime_error("File format is incorrect: " + fileName);
+        throw std::runtime_error("File format is incorrect or usupported: " + fileName + " | (supported formats: .txt)");
     }
 
     std::ifstream l_stream(fileName);
