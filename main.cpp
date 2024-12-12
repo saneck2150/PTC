@@ -19,8 +19,9 @@ int main()
             std::cout << "OK" << std::endl;
             for (const auto& token : extrModel.getInputDataTokens())
             {
-                std::cout << token << std::endl;
+                std::cout << token;
             }
+            std::cout << std::endl;
         }
         catch (std::runtime_error& e)
         {
@@ -36,8 +37,9 @@ int main()
         std::cout << "Compressed Data:" << std::endl;
         for (const auto& token : comprModel.getRLETokens())
         {
-            std::cout << token << std::endl; 
+            std::cout << token; 
         }
+        std::cout << std::endl;
     }
     return 0;
 }

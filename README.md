@@ -11,5 +11,3 @@ obj -> MyObj
 class -> MyClass
 
 macros -> _MY_MACROS_
-
-local var/fun -> l_localVar
