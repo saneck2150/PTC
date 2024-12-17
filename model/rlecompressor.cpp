@@ -73,20 +73,17 @@ std::string PTC::RLECompressorModel::rleCompress(const std::string& str)
             ++count;
         }
 
-        // Экранирование специальных символов
         std::string escapedChar;
         if (currentChar == ':' || currentChar == '|' || currentChar == '\\')
         {
-            escapedChar = "\\"; // Добавляем префикс для экранирования
+            escapedChar = "\\"; 
         }
         escapedChar += currentChar;
 
-        // Формируем блок: count:escapedChar|
         compressed += std::to_string(count) + ":" + escapedChar + "|";
         i += count;
     }
     
-    // Удаляем последний разделитель '|'
     if (!compressed.empty())
     {
         compressed.pop_back();
