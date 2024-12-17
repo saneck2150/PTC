@@ -64,23 +64,37 @@ std::string PTC::RLECompressorModel::rleCompress(const std::string& str)
     compressed.reserve(str.size());
     
     int n = str.size();
-    for (int i = 0; i < n; ) 
+    for (int i = 0; i < n; )
     {
         char currentChar = str[i];
         int count = 1;
-        while (i + count < n && str[i + count] == currentChar) 
+        while (i + count < n && str[i + count] == currentChar)
         {
             ++count;
         }
-        compressed += currentChar;
-        if (count > 1) 
+
+        // Экранирование специальных символов
+        std::string escapedChar;
+        if (currentChar == ':' || currentChar == '|' || currentChar == '\\')
         {
-            compressed += std::to_string(count);
+            escapedChar = "\\"; // Добавляем префикс для экранирования
         }
+        escapedChar += currentChar;
+
+        // Формируем блок: count:escapedChar|
+        compressed += std::to_string(count) + ":" + escapedChar + "|";
         i += count;
     }
+    
+    // Удаляем последний разделитель '|'
+    if (!compressed.empty())
+    {
+        compressed.pop_back();
+    }
+
     return compressed;
 }
+
 
 std::vector<std::string>& PTC::RLECompressorModel::getRLETokens()
 {
