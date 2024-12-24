@@ -1,7 +1,6 @@
-#include "modellib.hpp"
-
 #ifndef _EXTRACTOR_MODEL_
 #define _EXTRACTOR_MODEL_
+#include "modellib.hpp"
 
 class PTC::ExtractorModel 
 {

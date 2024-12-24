@@ -11,13 +11,17 @@
 #include <thread>
 #include <mutex>
 #include <algorithm>
+#include <unordered_map>
+#include <queue>
+#include <condition_variable>
+#include <functional>
+#include <future>
 
 namespace PTC
 {
     const std::string INPUT_FORMAT = ".txt";
-
+    const int AVAILABLE_THREADS = std::thread::hardware_concurrency() ? std::thread::hardware_concurrency() : 1;
     class ExtractorModel;
-    class RLECompressorModel;
     class HuffmanCompressorModel;
 };
 
